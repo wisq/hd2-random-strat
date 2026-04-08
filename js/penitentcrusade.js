@@ -581,7 +581,9 @@ const rollRewardOptions = async () => {
   }
 
   let itemsLists = await getRewardsItemsLists();
+  console.log(itemsLists);
   itemsLists = itemsLists.filter((list) => list.length > 0);
+  console.log(itemsLists);
   if (itemsLists.length < 1) {
     console.log("NOT ENOUGH ITEMS TO SHOW");
     return;
@@ -994,14 +996,20 @@ const applySpecialistRules = async () => {
 
   // only Eagles for EGC
   if (specialist === "30") {
-    newStrats = await newStrats.filter((ns) => ns.category === "Eagle");
-    console.log(newStrats);
+    newStrats = await newStrats.filter(
+      (ns) =>
+        ns.category === "Eagle" && ns.displayName !== "Eagle Strafing Run",
+    );
     return;
   }
 
   // only Orbitals for OBGC
   if (specialist === "31") {
-    newStrats = await newStrats.filter((ns) => ns.category === "Orbital");
+    newStrats = await newStrats.filter(
+      (ns) =>
+        ns.category === "Orbital" &&
+        ns.displayName !== "Orbital Precision Strike",
+    );
     return;
   }
 };
