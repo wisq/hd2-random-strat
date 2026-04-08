@@ -28,7 +28,7 @@ const rollArmor = async () => {
   }
   const activeArmorList = await getSelectedArmorRollType();
   const randArmorIndex = Math.floor(
-    Math.random() * activeArmorList.list.length
+    Math.random() * activeArmorList.list.length,
   );
   const rolledArmor = activeArmorList.list[randArmorIndex];
   let armorPath = "armorpassives";
