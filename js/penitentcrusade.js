@@ -581,17 +581,16 @@ const rollRewardOptions = async () => {
   }
 
   let itemsLists = await getRewardsItemsLists();
-  console.log(itemsLists);
   itemsLists = itemsLists.filter((list) => list.length > 0);
-  console.log(itemsLists);
   if (itemsLists.length < 1) {
     console.log("NOT ENOUGH ITEMS TO SHOW");
     return;
   }
 
   if (currentItems.length === 0) {
-    // roll antitank stratagems for non-K9 Handler after mission 7
-    if (missionCounter === 7 && specialist !== "22") {
+    // roll antitank stratagems for most specialists after mission 7
+    const specsThatDontNeedATHelp = ["22", "30", "31", "32"];
+    if (missionCounter === 7 && !specsThatDontNeedATHelp.includes(specialist)) {
       const antitankStratsList = await itemsLists[0].filter(
         (strat) => strat.antitank === true,
       );
@@ -1012,6 +1011,15 @@ const applySpecialistRules = async () => {
     );
     return;
   }
+
+  // only Orbitals for Minesweeper
+  if (specialist === "32") {
+    const mineStrats = ["Anti-Tank Mines", "Incendiary Mines", "Gas Mines"];
+    newStrats = await newStrats.filter((ns) =>
+      mineStrats.includes(ns.displayName),
+    );
+    return;
+  }
 };
 
 const applySpecialist = async (specToApply = null) => {
@@ -1036,7 +1044,7 @@ const applySpecialist = async (specToApply = null) => {
   }
   await getStartingItems(difficulty);
   startNewRun(specialist, difficulty, true);
-  const traitSpecialists = ["16", "17", "22", "30", "31"];
+  const traitSpecialists = ["16", "17", "22", "30", "31", "32"];
   if (traitSpecialists.includes(specialist)) {
     await applySpecialistRules();
   }
