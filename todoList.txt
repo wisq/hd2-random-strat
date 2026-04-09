@@ -1,8 +1,4 @@
 GENERAL:
-  - normalize background color of all equipment images
-  - leaderboard integrated with GitHub Issues?
-  - users submit verification files in discord server
-  - add notification about dangers of using Safari!!!
   - checklist for when new content comes out
     - /js
       - /utils
@@ -38,7 +34,7 @@ GENERAL:
 
   - fix drawer images for new capes
   - implement code for using item indices
-  - update Loadout Builder with new Entrenched Division content
+  - Button for unchecking/checking all warbonds on warbond select modals
 
 RANDOMIZER:
   - ability to enable/disable specific items from warbonds
@@ -79,6 +75,11 @@ BUDGET BLITZ
 	- getting HVI grants you a random item instead of credits
   - accidentals subtracts credits
   - explanation of how credits are earned
+  - remove Super Sample/HVI fields. earn more money for other things
+  - option to start on diff 7-8, with some more starting credits
+  - option to reset prices after every mission
+  - sterilizer cheaper
+  - Urchin free
 
 SPECIAL OPERATIONS
   - SPECIALIST ideas:
