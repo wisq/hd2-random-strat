@@ -40,7 +40,7 @@ RANDOMIZER:
   - ability to enable/disable specific items from warbonds
   - option to guarantee to not roll the same item twice in a row
   BUGS:
-    - 
+    - always roll backpack/weapon checkbox interferes with ability to reroll one stratagem
 
 PENITENT CRUSADE:
   - make specialist details more visible
