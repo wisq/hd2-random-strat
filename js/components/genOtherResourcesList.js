@@ -28,6 +28,11 @@ const genOtherResourcesList = () => {
       url: "https://hd2random.com",
       description: "Another customizeable, ad-free loadout randomizer",
     },
+    {
+      displayName: "Democracy ++",
+      url: "https://adamlassiter.github.io/democracy-plusplus/",
+      description: "Loadout challenge runs, inspired by Budget Blitz and Special Ops",
+    },
   ];
 
   for (let i = 0; i < resources.length; i++) {
